@@ -1,6 +1,0 @@
-;; Keys 
-;(define-key interactive-haskell-mode-map (kbd "M-.") 'haskell-mode-goto-loc)
-;(define-key interactive-haskell-mode-map (kbd "C-c C-t") 'haskell-mode-show-type-at)
-
-;; How interactive mode starts
-(setq haskell-process-type 'auto)

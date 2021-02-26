@@ -1,9 +1,18 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Use powerline
 USE_POWERLINE="true"
+
 # Source manjaro-zsh-configuration
 if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
   source /usr/share/zsh/manjaro-zsh-config
 fi
+
 # Use manjaro zsh prompt
 if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
   source /usr/share/zsh/manjaro-zsh-prompt
@@ -12,9 +21,12 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# manpager
+export MANPAGER="nvim -c 'set ft=man' -"
+
 # Neovim aliases
-alias vi="vimx"
-alias vim="vimx"
+alias vi="nvim"
+alias vim="nvim"
 
 # Sudo alias
 alias sudo="sudo "
@@ -28,7 +40,7 @@ alias sudo="sudo "
 export PATH="$HOME/.julia-1.5.3/bin:$PATH"
 
 # node
-#export PATH="$HOME/.node-v12.18.0/bin:$PATH"
+export PATH="$HOME/.node/bin:$PATH"
 
 # GO
 export PATH="$PATH:/usr/local/go/bin"
@@ -42,23 +54,25 @@ eval "$(pyenv virtualenv-init -)"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+export PYTHON_CONFIGURE_OPTS="--enable-shared"
 
 # Filezilla
-export PATH="$HOME/.FileZilla3/bin:$PATH"
+#export PATH="$HOME/.FileZilla3/bin:$PATH"
 
 # Nsight
 #export PATH="$PATH:/usr/local/NVIDIA-Nsight-Compute"
 #export PATH="$PATH:/usr/local/cuda-11.1/bin"
-export PATH="$PATH:/opt/nvidia/nsight-compute/2020.3.1"
+#export PATH="$PATH:/opt/nvidia/nsight-compute/2020.3.1"
 
 # Emacs
 #alias emacs="XLIB_SKIP_ARGB_VISUALS=1 emacs"
 
-# Full pyenv
+# Full pyenv macos
 #export PYTHON_CONFIGURE_OPTS="--enable-framework"
 
 # Haskell path
-export PATH="$HOME/.ghcup/bin:$PATH"
+#export PATH="$HOME/.ghcup/bin:$PATH"
+[ -f "/home/sys-adm-eddie/.ghcup/env" ] && source "/home/sys-adm-eddie/.ghcup/env" # ghcup-env
 
 # pyls
-export PATH="/home/sys-adm-eddie/.local/bin:$PATH"
+#export PATH="/home/sys-adm-eddie/.local/bin:$PATH"

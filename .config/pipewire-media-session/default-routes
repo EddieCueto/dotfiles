@@ -1,2 +1,7 @@
-alsa_card.pci-0000:00:1f.3:input:analog-input-internal-mic mute:0 volumes:2,0.398102,0.398102
-alsa_card.pci-0000:00:1f.3:output:analog-output-headphones mute:0 volumes:2,0.249268,0.249268
+{ 
+ "default.route.alsa_card.pci-0000:00:1f.3-platform-skl_hda_dsp_generic:profile:HiFi": [ ]
+ "default.route.alsa_card.pci-0000:00:1f.3-platform-skl_hda_dsp_generic:output:[Out] Headphones": { "mute": false, "volumes": [ 0.017279, 0.017279 ], "channels": [ "FL", "FR" ] }
+ "default.route.alsa_card.pci-0000:00:1f.3-platform-skl_hda_dsp_generic:input:[In] Headset": { "mute": false, "volumes": [ 0.399992, 0.399992 ], "channels": [ "FL", "FR" ] }
+ "default.route.alsa_card.pci-0000:00:1f.3-platform-skl_hda_dsp_generic:input:[In] Mic1": { "mute": false, "volumes": [ 0.399992, 0.399992 ], "channels": [ "FL", "FR" ] }
+ "default.route.alsa_card.pci-0000:00:1f.3-platform-skl_hda_dsp_generic:output:[Out] Speaker": { "mute": true, "volumes": [ 0.177834, 0.177834 ], "channels": [ "FL", "FR" ] }
+}

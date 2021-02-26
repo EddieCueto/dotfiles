@@ -1,6 +1,5 @@
 [Default Applications]
-x-scheme-handler/msteams=teams.desktop
-x-scheme-handler/tg=userapp-Telegram Desktop-9KAPY0.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-Y64EZ0.desktop
 
 [Added Associations]
-x-scheme-handler/tg=userapp-Telegram Desktop-9KAPY0.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-Y64EZ0.desktop;

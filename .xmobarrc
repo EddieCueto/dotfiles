@@ -1,13 +1,10 @@
--- Thanks to krive001 to share the code of xmobar
--- https://github.com/krive001/xmonad-xmobar
-
 Config {
-    font = "xft:Noto Sans LGC:size=11:style=Regular",
-    additionalFonts = ["xft:Noto Sans:size=10:style=Bold","xft:FontAwesome:style=Regular:size=13"]
-   , bgColor          = "#2F343F"
-   , fgColor          = "white"
+    font = "xft:Anonymous Pro:pixelsize=13:style=Regular",
+    additionalFonts = ["xft:Noto Sans:pixelsize=10:style=Bold","xft:FontAwesome:style=Regular:pixelsize=13"]
+   , bgColor          = "#2E3440"
+   , fgColor          = "#81a1c1"
    --, position         = TopSize C 100 30
-   , position         = TopW L 96
+   , position         = Static { xpos = 0 , ypos = 0, width = 1848, height = 24 }
    , textOffset       = -1
    , iconOffset       = -8
    , alpha            = 255
@@ -21,72 +18,65 @@ Config {
    , pickBroadest     = True
    , persistent       = True
    , sepChar          = "%"
+--
    , alignSep         = "}{"
-   , template         = "%battery% | %dynnetwork% | %StdinReader% }{ %date% | %coretemp% | %multicpu% | %memory%" -- | <action=`pavucontrol` button=3><action=`XMMute` button=1><action=button=4><action=button=5>%XVol% </action></action></action></action>"
+   , template         = "%UnsafeStdinReader%<fc=#666666> | </fc>%battery%<fc=#666666> | </fc>%dynnetwork% }{ %date%<fc=#666666> | </fc> %kbd% <fc=#666666> | </fc><action=xdotool key super+y>%kbd%</action><fc=#666666> | </fc>%disku%<fc=#666666> | </fc>%coretemp%<fc=#666666> | </fc>%multicpu%<fc=#666666> | </fc>%memory%"
    , commands         =
-      [ Run MultiCpu                            [ "--template" , "<fc=white><fn=2>  </fn></fc><fc=white></fc><total> %"
+      [ Run MultiCpu                            [ "--template" , "<fc=#88c0d0><fn=2> </fn></fc><total> %"
                                                 , "--Low"      , "50"        -- units: %
-                                                , "--High"     , "85"        -- units: %
-                                                , "--low"      , "#ffffff"
-                                                , "--normal"   , "#ffffff"
-                                                , "--high"     , "#fd0537"
+                                                , "--High"     , "95"        -- units: %
+                                                , "--low"      , "#a3be8c"
+                                                , "--normal"   , "#d08770"
+                                                , "--high"     , "#bf616a"
                                                 ] 10
 
-      , Run CoreTemp                            [ "--template" , "<fc=white><fn=2>  </fn></fc><fc=green></fc><core0> °C"
-                                                , "--Low"      , "2"         -- units: °C
-                                                , "--High"     , "80"        -- units: °C
-                                                , "--low"      , "#ffffff"
-                                                , "--normal"   , "#ffffff"
-                                                , "--high"     , "#fd0537"
+      , Run CoreTemp                            [ "--template" , "<fc=#88c0d0><fn=2></fn></fc> <core0> °C"
+                                                , "--Low"      , "50"         -- units: °C
+                                                , "--High"     , "95"        -- units: °C
+                                                , "--low"      , "#a3be8c"
+                                                , "--normal"   , "#d08770"
+                                                , "--high"     , "#bf616a"
                                                 ] 10
 
-      , Run Memory                              [ "--template" ,"<fc=white><fn=2> </fn></fc><fc=white></fc><usedratio> %"
+      , Run DiskU [("/", "<fc=#88c0d0><fn=2></fn></fc> hdd: <free> free")] [] 3600
+
+      , Run Memory                              [ "--template" ,"<fc=#88c0d0><fn=2> </fn></fc><fc=white></fc><usedratio> %"
                                                 ] 10
 
-        -- battery monitor
-        , Run Battery        [ "--template" , "Batt: <acstatus>"
-                             , "--Low"      , "10"        -- units: %
-                             , "--High"     , "80"        -- units: %
-                             , "--low"      , "red"
-                             , "--normal"   , "orange"
-                             , "--high"     , "green"
+      -- battery monitor
+      , Run Battery        [ "--template" , "Batt: <acstatus>"
+                             , "--Low"      , "30"        -- units: %
+                             , "--High"     , "50"        -- units: %
+                             , "--low"      , "#bf616a"
+                             , "--normal"   , "#d08770"
+                             , "--high"     , "#a3be8c"
 
                              , "--" -- battery specific options
                                        -- discharging status
                                        , "-o"	, "<left>% (<timeleft>)"
                                        -- AC "on" status
-                                       , "-O"	, "<fc=#dAA520>Charging</fc> <left>%"
+                                       , "-O"	, "<fc=#d08770>Charging</fc> <left>%"
                                        -- charged status
-                                       , "-i"	, "<fc=#006000>Charged</fc>"
+                                       , "-i"	, "<fc=#a3be8c>Charged</fc>"
                              ] 50
 
-
-
         -- network activity monitor (dynamic interface resolution)
-        , Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
-                             , "--Low"      , "1000"       -- units: B/s
-                             , "--High"     , "5000"       -- units: B/s
-                             , "--low"      , "green"
-                             , "--normal"   , "orange"
-                             , "--high"     , "red"
+      , Run DynNetwork     [ "--template" , "<dev>: <tx> kB/s|<rx> kB/s"
+                             , "--Low"      , "100000"       -- units: B/s
+                             , "--High"     , "2500000"       -- units: B/s
+                             , "--low"      , "#a3be8c"
+                             , "--normal"   , "#d08770"
+                             , "--high"     , "#bf616a"
                              ] 10
 
---      , Run Wireless           "wlp3s0"        ["-t", "<fc=green>Wifi:</fc> <quality>"
---                                                ] 10
+      --, Volume "default" "Master" [] 10
 
-      , Run Com "/bin/bash" ["-c", "XMgetvolume"]  "XVol" 10
-
-
-      , Run Kbd                                [ ("be" , "<fc=#FFFFFF>BE</fc>")
-                                                , ("us" , "<fc=#FFFFFF>US</fc>")]
+      , Run Kbd                                [("us" , "US")]
 
       , Run UnsafeStdinReader
 
-	  , Run Com "/bin/bash" ["-c",  "XMKupdate"] "update" 600
+      , Run Date                                "%H:%M %a %d-%m-%Y" "date" 60
 
-      , Run Date                                "%Y-%m-%d  %H:%M" "date" 60
-
-      , Run StdinReader
 ]
 
 }
