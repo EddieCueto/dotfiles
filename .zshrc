@@ -8,12 +8,12 @@ fi
 # Use powerline
 USE_POWERLINE="true"
 
-# Source manjaro-zsh-configuration
+# Source zsh-configuration
 if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
   source /usr/share/zsh/manjaro-zsh-config
 fi
 
-# Use manjaro zsh prompt
+# Use zsh prompt
 if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
   source /usr/share/zsh/manjaro-zsh-prompt
 fi
@@ -55,6 +55,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
+
+# ADD local to path
+export PATH="$HOME/.local/bin:$PATH"
 
 # Filezilla
 #export PATH="$HOME/.FileZilla3/bin:$PATH"

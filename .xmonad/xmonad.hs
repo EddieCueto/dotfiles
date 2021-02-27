@@ -281,9 +281,10 @@ myLayout = fullscreenFocus $ avoidStrutsOn [U,R] (tiled ||| Mirror tiled ||| Ful
 myManageHook = composeAll
     [ className =? "vlc"        --> doFloat
     , className =? "Gimp"           --> doFloat
+    , className =? "firefox"           --> doIgnore
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore
-    , resource  =? "steam"       --> doIgnore ]
+    , resource  =? "steam"       --> doFloat ]
 
 ------------------------------------------------------------------------
 -- Event handling

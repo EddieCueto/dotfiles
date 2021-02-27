@@ -1,4 +1,14 @@
+.pyenv
 .config/nvim/addons/**
+._*
+.gitconfig
+.node/**
+.node_repl_history
+.npm/**
+.steam/**
+.steampath
+.steampid
+.xmonad/xpm/*
 Desktop/*
 Documents/*
 Downloads/*
@@ -30,7 +40,6 @@ Videos/*
 prompt.txt
 jltest.jl
 .putty/*
-.pyenv/*
 pyenv_fedora_req.txt
 .pylint.d/*
 .python_history
@@ -66,3 +75,14 @@ vuln.txt
 .config/Unkown\ Organization/*
 .config/vlc/*
 .config/zoomus.conf
+.config/dconf/**
+.config/pipewire-media-session/**
+.config/pulse/**
+.xmonad/xmonad-x86_64-linux
+.xmonad/xmonad.hi
+.xmonad/xmonad.o
+.xmonad/.stack-work
+.xmonad/xmobar-git
+.xmonad/xmonad-contrib-git
+.xmonad/xmonad-git
+.config/libreoffice/**

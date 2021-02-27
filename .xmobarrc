@@ -20,7 +20,7 @@ Config {
    , sepChar          = "%"
 --
    , alignSep         = "}{"
-   , template         = "%UnsafeStdinReader%<fc=#666666> | </fc>%battery%<fc=#666666> | </fc>%dynnetwork% }{ %date%<fc=#666666> | </fc> %kbd% <fc=#666666> | </fc><action=xdotool key super+y>%kbd%</action><fc=#666666> | </fc>%disku%<fc=#666666> | </fc>%coretemp%<fc=#666666> | </fc>%multicpu%<fc=#666666> | </fc>%memory%"
+   , template         = "%UnsafeStdinReader%<fc=#666666> | </fc>%battery%<fc=#666666> | </fc>%dynnetwork% }{ %date%<fc=#666666> | </fc><action=xdotool key super+y>%kbd%</action><fc=#666666> | </fc>%disku%<fc=#666666> | </fc>%coretemp%<fc=#666666> | </fc>%multicpu%<fc=#666666> | </fc>%memory%"
    , commands         =
       [ Run MultiCpu                            [ "--template" , "<fc=#88c0d0><fn=2> </fn></fc><total> %"
                                                 , "--Low"      , "50"        -- units: %
@@ -69,7 +69,7 @@ Config {
                              , "--high"     , "#bf616a"
                              ] 10
 
-      --, Volume "default" "Master" [] 10
+      --, Volume "default" "Master" ["-t", "Vol: <volume>% <status>"] 10
 
       , Run Kbd                                [("us" , "US")]
 
