@@ -1,6 +1,7 @@
 .pyenv
 .config/nvim/addons/**
 ._*
+*_bak
 .gitconfig
 .node/**
 .node_repl_history
@@ -82,6 +83,7 @@ vuln.txt
 .xmonad/xmonad.hi
 .xmonad/xmonad.o
 .xmonad/.stack-work
+.xmonad/stack.yaml.lock
 .xmonad/xmobar-git
 .xmonad/xmonad-contrib-git
 .xmonad/xmonad-git
