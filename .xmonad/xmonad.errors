@@ -1,0 +1,64 @@
+
+xmonad.hs:3:1: error:
+    Could not find module ‘XMonad’
+    Perhaps you meant DsMonad (needs flag -package-key ghc-8.10.4)
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+  |
+3 | import XMonad
+  | ^^^^^^^^^^^^^
+
+xmonad.hs:5:1: error:
+    Could not find module ‘Graphics.X11.ExtraTypes.XF86’
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+  |
+5 | import Graphics.X11.ExtraTypes.XF86
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:6:1: error:
+    Could not find module ‘XMonad.Layout.Fullscreen’
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+  |
+6 | import XMonad.Layout.Fullscreen (fullscreenEventHook,fullscreenManageHook,fullscreenFocus)
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:7:1: error:
+    Could not find module ‘XMonad.StackSet’
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+  |
+7 | import qualified XMonad.StackSet as W
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:16:1: error:
+    Could not find module ‘XMonad.Hooks.ManageDocks’
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+16 | import XMonad.Hooks.ManageDocks
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:17:1: error:
+    Could not find module ‘XMonad.Hooks.DynamicLog’
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+17 | import XMonad.Hooks.DynamicLog
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:19:1: error:
+    Could not find module ‘XMonad.Hooks.ManageHelpers’
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+19 | import XMonad.Hooks.ManageHelpers
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:23:1: error:
+    Could not find module ‘XMonad.Util.SpawnOnce’
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+23 | import XMonad.Util.SpawnOnce
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:24:1: error:
+    Could not find module ‘XMonad.Util.Run’
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+24 | import XMonad.Util.Run (spawnPipe)
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

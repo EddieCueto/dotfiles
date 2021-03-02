@@ -1,5 +1,6 @@
 .pyenv
 .config/nvim/addons/**
+.config/configstore/*
 ._*
 *_bak
 .gitconfig
@@ -77,11 +78,13 @@ vuln.txt
 .config/vlc/*
 .config/zoomus.conf
 .config/dconf/**
+.config/dconf
 .config/pipewire-media-session/**
 .config/pulse/**
 .xmonad/xmonad-x86_64-linux
 .xmonad/xmonad.hi
 .xmonad/xmonad.o
+.xmonad/xmonad.errors
 .xmonad/.stack-work
 .xmonad/stack.yaml.lock
 .xmonad/xmobar-git

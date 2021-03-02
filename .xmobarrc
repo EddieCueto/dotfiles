@@ -1,6 +1,6 @@
 Config {
     font = "xft:Anonymous Pro:pixelsize=13:style=Regular",
-    additionalFonts = ["xft:Noto Sans:pixelsize=10:style=Bold","xft:FontAwesome:style=Regular:pixelsize=13"]
+    additionalFonts = ["xft:Noto Sans:pixelsize=13:style=Bold","xft:FontAwesome:style=Regular:pixelsize=13"]
    , bgColor          = "#2E3440"
    , fgColor          = "#81a1c1"
    --, position         = TopSize C 100 30

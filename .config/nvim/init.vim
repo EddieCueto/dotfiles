@@ -97,6 +97,7 @@ call plug#end()
 " -------------------
 
 set number
+set spell spelllang=en_gb
 
 " Automatically install missing plugins on startup
 autocmd VimEnter *
