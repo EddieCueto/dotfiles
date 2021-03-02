@@ -91,3 +91,9 @@ vuln.txt
 .xmonad/xmonad-contrib-git
 .xmonad/xmonad-git
 .config/libreoffice/**
+.config/deluge
+.config/enchant
+.config/libfm
+.config/unity3d
+.xournalpp
+
